@@ -1,8 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 import './Assets/styles/app.css';
-import {Navigation} from '@shopify/polaris';
-import {HomeMajor, CashDollarMajor, QuestionMarkMajor, CircleAlertMajor, SettingsMajor, StoreStatusMajor} from '@shopify/polaris-icons';
+import { Navigation } from '@shopify/polaris';
+import { HomeMajor, CashDollarMajor, QuestionMarkMajor, CircleAlertMajor, SettingsMajor, StoreStatusMajor } from '@shopify/polaris-icons';
 
 //import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 function App() {
@@ -15,54 +15,52 @@ function App() {
           label: 'Home',
           icon: HomeMajor,
         },
+      ]}
+    />
+    <Navigation.Section
+      title="Statistics"
+      items={[
         {
-          label: 'Statistics',
-          icon: StoreStatusMajor,
-          selected: true,
-          subNavigationItems: [
-            {
-              url: '/statistics/dashboard',
-              disabled: false,
-              selected: true,
-              label: 'Dashboard',
-            },
-            {
-              url: '/statistics/search_analytics',
-              disabled: false,
-              label: 'Search Analytics',
-            },
-            {
-              url: '/statistics/conversions',
-              label: 'Conversions',
-            },
-          ],
+          url: '/statistics/dashboard',
+          disabled: false,
+          label: 'Dashboard',
         },
         {
-          label: 'Settings',
-          icon: SettingsMajor,
-          selected: true,
-          subNavigationItems: [
-            {
-              url: '/settings/instant_search',
-              disabled: false,
-              selected: true,
-              label: 'Instant search',
-            },
-            {
-              url: '/settings/synonyms',
-              disabled: false,
-              label: 'Synonyms',
-            },
-            {
-              url: '/settings/result_page',
-              label: 'Result page',
-            },
-            {
-              url: '/settings/advanced',
-              label: 'Advanced',
-            },
-          ],
+          url: '/statistics/search_analytics',
+          disabled: false,
+          label: 'Search Analytics',
         },
+        {
+          url: '/statistics/conversions',
+          label: 'Conversions',
+        },
+      ]}
+    />
+    <Navigation.Section
+    title="Settings"
+    items={[
+      {
+        url: '/settings/instant_search',
+        disabled: false,
+        label: 'Instant search',
+      },
+      {
+        url: '/settings/synonyms',
+        disabled: false,
+        label: 'Synonyms',
+      },
+      {
+        url: '/settings/result_page',
+        label: 'Result page',
+      },
+      {
+        url: '/settings/advanced',
+        label: 'Advanced',
+      },
+    ]}
+    />
+    <Navigation.Section
+    items={[
         {
           url: '/pricing',
           label: 'Pricing',
