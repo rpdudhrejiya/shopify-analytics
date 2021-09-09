@@ -1,23 +1,13 @@
 import React from "react";
-import { Card, Heading, Icon, Link, Stack }  from "@shopify/polaris";
-import { CashDollarMajor } from "@shopify/polaris-icons";
+import { Card } from 'antd';
+import { useHistory } from 'react-router-dom';
 export default function Home() {
+
+	const history = useHistory();
+
 	return (
-		<div>
-			<h2>Hello</h2>
-			<Stack>
-				<Link monochrome removeUnderline url="/pricing">
-					<Card title=
-						{
-							<Stack>
-								<Icon source={CashDollarMajor}/>
-								<Heading>Go to pricing</Heading>	
-							</Stack>
-						} sectioned>
-						<p>Check your potential<br/> monthly fee and be<br/> clear about our pricing.</p>
-					</Card>
-				</Link>
-			</Stack>
-		</div>
+		<Card title="Card title" bordered={false} style={{ width: 300 }}>
+      <p>{ JSON.stringify(history) }</p>
+    </Card>
 	);
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigation } from '@shopify/polaris';
-import { HomeMajor, CashDollarMajor, QuestionMarkMajor, CircleAlertMajor, SettingsMajor, StoreStatusMajor,  DropdownMinor } from '@shopify/polaris-icons';
+import { HomeMajor, CashDollarMajor, QuestionMarkMajor, CircleAlertMajor, SettingsMajor, StoreStatusMajor } from '@shopify/polaris-icons';
 export default function Sidebar() {
 	const [flag1, setFlag1] = React.useState(false);
   const [flag2, setFlag2] = React.useState(false);
