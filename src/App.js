@@ -15,25 +15,23 @@ const {Content} = Layout;
 function App() {
 
   return (
-    <Router forceRefresh={true}>
+    <Router>
       <Layout>
         <Sidebar router={router} />
           <Layout>
             <Header/>
-            <Content>
-              <div className="app-layout-content">
-                <Switch>
-                  {
-                    router.map(route => {
-                      if(route.children) {
-                        return route.children.map(child => <Route path={child.path} component={child.component} key={child.title}/>)
-                      } else {
-                        return <Route path={route.path} component={route.component} key={route.title}/>
-                      }
-                    })
-                  }
-                </Switch>
-              </div>
+            <Content className="app-layout-content">
+              <Switch>
+                {
+                  router.map(route => {
+                    if(route.children) {
+                      return route.children.map(child => <Route path={child.path} component={child.component} key={child.title} exact={child.exact}/>)
+                    } else {
+                      return <Route path={route.path} component={route.component} key={route.title} exact={route.exact}/>
+                    }
+                  })
+                }
+              </Switch>
             </Content>
             <Footer/>
           </Layout>

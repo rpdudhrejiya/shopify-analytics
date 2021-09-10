@@ -1,12 +1,15 @@
 import React from "react";
 import { PageHeader } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { withRouter, useLocation } from 'react-router-dom';
 import { connect } from "react-redux"
 import {
 	setSidebarVisible
 } from "../Store/app/app.actions";
 
 function Header(props) {
+
+	const location = useLocation();
 
 	const {
 		visible,
@@ -17,8 +20,8 @@ function Header(props) {
     <PageHeader
       className="page-header"
       onBack={() => setSidebarVisible(!visible)}
-      title="Home"
-      subTitle="Shop Search insights"
+      title={location.state?.title}
+      subTitle={location.state?.subtitle}
 			backIcon={visible ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
     />
   )
@@ -36,4 +39,4 @@ const mapDispatchToProps = dispatch => {
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

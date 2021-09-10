@@ -1,13 +1,14 @@
 import { HomeOutlined, DashboardOutlined, SettingOutlined, DollarOutlined, InfoCircleOutlined, QuestionCircleOutlined  } from '@ant-design/icons';
-import Home from '../Pages/Home';
+import {Home, Help} from '../Pages';
 
 const router = [
 	{
 		title: 'Home',
+		subtitle: 'Shop Search insights',
 		icon: HomeOutlined,
 		path: '/',
     exact: true,
-		component: Home
+		component: Home,
 	},
 	{
 		title: 'Statistics',
@@ -18,19 +19,21 @@ const router = [
 				title: 'Dashboard',
 				path: '/dashboard',
 				exact: true,	
-				component: Home
+				component: Home,
+				subtitle: 'Overview',
 			},
 			{
 				title: 'Analytics',
 				path: '/search-analytics',
 				exact: true,
-				component: Home
+				component: Home,
+				subtitle: 'Shop Search insights',
 			},
 			{
 				title: 'Conversions',
 				path: '/conversions',
 				exact: true,
-				component: Home
+				component: Home,
 			}
 		]
 	},
@@ -43,7 +46,8 @@ const router = [
 				title: 'Instant Search',
 				path: '/instant-search',
 				exact: true,
-				component: Home
+				component: Home,
+				subtitle: 'Search widget setting',
 			},
 			{
 				title: 'Synonyms',
@@ -61,7 +65,8 @@ const router = [
 				title: 'Advanced',
 				path: '/advanced',
 				exact: true,
-				component: Home
+				component: Home,
+				subtitle: 'Customizations',
 			}
 		]
 	},
@@ -70,21 +75,24 @@ const router = [
 		icon: DollarOutlined,
 		path: '/pricing',
     exact: true,
-		component: Home
+		component: Home,
+		subtitle: 'Effordable pricing plans',
 	},
 	{
 		title: 'Help',
 		icon: InfoCircleOutlined,
 		path: '/help',
     exact: true,
-		component: Home
+		component: Help,
+		subtitle: 'Quick help',
 	},
 	{
 		title: 'Feature request',
 		icon: QuestionCircleOutlined,
 		path: '/feature-request',
     exact: true,
-		component: Home
+		component: Home,
+		subtitle: 'Request a feature',
 	}
 ];
 

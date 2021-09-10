@@ -1,0 +1,23 @@
+.search-help {
+	.card {
+		border-radius: 8px;
+		cursor: pointer;
+		transition: all .2s ease-out;
+		&:hover{
+			box-shadow: 6px 6px 18px rgba(0,0,0,.1);
+		}
+		.card-wrapper {
+			display: flex;
+			flex-direction: row;
+		}
+		.card-icon-wrapper{
+			margin-right: 24px;
+		}
+		.card-body {
+			flex: 1
+		}
+		.icon {
+			font-size: 2rem;
+		}
+	}
+}

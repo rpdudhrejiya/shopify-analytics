@@ -15,15 +15,16 @@ function Sidebar(props) {
     router,
   } = props;
 
-	const onClick = ({key}) => {
-		console.log(key);
-		history.push(key);
+	const onClick = ({item, key, keyPath, domEvent}) => {
+		const { title, subtitle = '' } = item.props.route;
+		history.push(key, { title, subtitle });
 	}
+	const defaultSelectedKey = router[0].children ? router[0].children[0].path : router[0].path; 
 
   return (
 		<Sider trigger={null} collapsible collapsed={visible}>
 			<Menu
-				defaultSelectedKeys={['1']}
+				defaultSelectedKeys={[defaultSelectedKey]}
 				defaultOpenKeys={['sub1']}
 				mode="inline"
 				theme="dark"
@@ -37,14 +38,14 @@ function Sidebar(props) {
 								<SubMenu key={route.path} icon={<route.icon />} title={route.title}>
 									{
 										route.children.map(child => (
-											<Menu.Item key={`${route.path}${child.path}`}>{child.title}</Menu.Item>		
+											<Menu.Item key={`${route.path}${child.path}`} route={child}>{child.title}</Menu.Item>		
 										))
 									}
 								</SubMenu>
 							)
 						} else {
 							return (
-								<Menu.Item key={route.path} icon={<route.icon />}>
+								<Menu.Item key={route.path} icon={<route.icon />} route={route}>
 									{route.title}
 								</Menu.Item>
 							)
