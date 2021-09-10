@@ -25,7 +25,11 @@ function App() {
                 {
                   router.map(route => {
                     if(route.children) {
-                      return route.children.map(child => <Route path={child.path} component={child.component} key={child.title} exact={child.exact}/>)
+                      return route.children.map(child => <Route
+                        path={`${route.path}${child.path}`}
+                        component={child.component}
+                        key={child.title} exact={child.exact}
+                      />)
                     } else {
                       return <Route path={route.path} component={route.component} key={route.title} exact={route.exact}/>
                     }

@@ -1,5 +1,6 @@
 import { HomeOutlined, DashboardOutlined, SettingOutlined, DollarOutlined, InfoCircleOutlined, QuestionCircleOutlined  } from '@ant-design/icons';
 import {Home, Help} from '../Pages';
+import { Dashboard } from '../Pages/Statistics';
 
 const router = [
 	{
@@ -19,7 +20,7 @@ const router = [
 				title: 'Dashboard',
 				path: '/dashboard',
 				exact: true,	
-				component: Home,
+				component: Dashboard,
 				subtitle: 'Overview',
 			},
 			{

@@ -1,7 +1,7 @@
 import { VISIBLE } from './app.types';
 
 const INITIAL_STATE = {
-	visible: true,
+	visible: false,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
