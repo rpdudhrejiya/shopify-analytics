@@ -1,5 +1,6 @@
 import { HomeOutlined, DashboardOutlined, SettingOutlined, DollarOutlined, InfoCircleOutlined, QuestionCircleOutlined  } from '@ant-design/icons';
 import {Home, Help} from '../Pages';
+import { InstantSearch } from '../Pages/Settings';
 import { Dashboard } from '../Pages/Statistics';
 
 const router = [
@@ -47,7 +48,7 @@ const router = [
 				title: 'Instant Search',
 				path: '/instant-search',
 				exact: true,
-				component: Home,
+				component: InstantSearch,
 				subtitle: 'Search widget setting',
 			},
 			{

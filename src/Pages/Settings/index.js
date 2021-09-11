@@ -1,0 +1,1 @@
+export { default as InstantSearch } from './InstantSearch';

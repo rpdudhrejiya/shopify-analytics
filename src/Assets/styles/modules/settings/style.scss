@@ -1,0 +1,11 @@
+.search-setting {
+	.list-tile {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.tooltip-icon {
+			margin-right: 8px;
+		}
+	}
+}
