@@ -1,6 +1,7 @@
 import React from "react";
-import { Switch, Tooltip } from "antd";
+import { Switch, Tooltip, Select } from "antd";
 import { InfoCircleOutlined } from '@ant-design/icons';
+const { Option } = Select;
 
 export default function SettingListTile(props) {
 
@@ -10,6 +11,8 @@ export default function SettingListTile(props) {
     icon,
     value,
     onChange,
+    isDropdown,
+    optionValues,
     tooltipProps,
     iconProps,
     switchProps,
@@ -30,7 +33,16 @@ export default function SettingListTile(props) {
           </Tooltip>
         </p>
       </div>
-      <Switch value={value} onChange={onChange} {...switchProps}/>
+      {
+        !isDropdown ? <Switch value={value} onChange={onChange} {...switchProps}/> : 
+          (<Select defaultValue={optionValues[0]} style={{ width: 120 }} >
+            {
+              optionValues.map((item) => (
+                <Option value={item}>{item}</Option>
+              ))
+            }
+          </Select>)
+      }
     </div>
   )
 };
